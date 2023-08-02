@@ -1,8 +1,8 @@
-import { auditModel } from "./audit.model.js";
-import { mongodbConnection } from "./mongodb.js";
-import { mongodbDisconnect } from "./mongodb.js";
+import { auditModel } from "../model/auditData.model.js";
+import { mongodbConnection } from "../utils/mongoConnections.js";
+import { mongodbDisconnect } from "../utils/mongoConnections.js";
 // Lambda function to handle the event
-export const hello = async (event) => {
+export const saveAuditData = async (event) => {
   try {
     // Parse the event body to extract data
     const eventBody = JSON.parse(event.body);
